@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دراكوس</title>
+<style>
+    body {
+        background-color: #0d0d0d;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    header {
+        padding: 40px 20px;
+    }
+    h1 {
+        color: #ff0000;
+        font-size: 3em;
+        margin: 0;
+    }
+    p.subtitle {
+        font-size: 1.2em;
+        color: #ccc;
+        margin-top: 10px;
+    }
+    .language-switch {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #ff0000;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 40px 0;
+    }
+    .card {
+        background-color: #330000;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 10px;
+        width: 250px;
+        box-shadow: 0 0 10px rgba(255,0,0,0.5);
+    }
+    .card h2 {
+        color: #ff0000;
+    }
+    .about {
+        max-width: 700px;
+        margin: auto;
+        padding: 20px;
+    }
+    footer {
+        background: #1a1a1a;
+        padding: 20px;
+        color: #888;
+        font-size: 0.9em;
+    }
+    @media (max-width: 768px) {
+        .cards {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+</head>
+<body>
+
+<button class="language-switch" onclick="switchLanguage()">English</button>
+
+<header>
+    <h1>دراكوس</h1>
+    <p class="subtitle">مرحبا بكم في موقع دراكوس، يمكنكم تصفح الموقع براحة، وقتا ممتعا للجميع.</p>
+</header>
+
+<section class="cards">
+    <div class="card">
+        <h2>بلوغنات ماينكرافت</h2>
+        <p>بلوغنات مخصصة لسيرفرات ماينكرافت، من تحسينات اللعب إلى أدوات الإدارة.</p>
+    </div>
+    <div class="card">
+        <h2>بوتات ديسكورد</h2>
+        <p>بوتات ديسكورد غنية بالميزات للإدارة، الترفيه، الأتمتة والمزيد.</p>
+    </div>
+    <div class="card">
+        <h2>قريبًا</h2>
+        <p>خدمات ومشاريع جديدة قادمة.</p>
+    </div>
+</section>
+
+<section class="about">
+    <h2 style="color:#ff0000;">معلومات عني</h2>
+    <p>مرحبا، انا إسمي ياسين، وعمري 15 سنة، انا اهتم بصناعة البوتات الخاصة بدسكورد، وتطوير بلوغنات ماينكرافت، وصناعة بلوغنات ماينكرافت.</p>
+</section>
+
+<footer>
+    © 2025 جميع الحقوق محفوظة - دراكوس
+</footer>
+
+<script>
+    function switchLanguage() {
+        document.documentElement.lang = document.documentElement.lang === "ar" ? "en" : "ar";
+        document.documentElement.dir = document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+        if (document.documentElement.lang === "en") {
+            document.querySelector("h1").innerText = "Dracos";
+            document.querySelector(".subtitle").innerText = "Welcome to Drakos website, browse freely and enjoy your time.";
+            document.querySelectorAll(".card")[0].innerHTML = "<h2>Minecraft Plugins</h2><p>Custom plugins for Minecraft servers, from gameplay enhancements to admin tools.</p>";
+            document.querySelectorAll(".card")[1].innerHTML = "<h2>Discord Bots</h2><p>Feature-rich Discord bots for moderation, entertainment, automation, and more.</p>";
+            document.querySelectorAll(".card")[2].innerHTML = "<h2>Coming Soon</h2><p>New services and projects coming soon.</p>";
+            document.querySelector(".about").innerHTML = "<h2 style='color:#ff0000;'>About Me</h2><p>Hello, my name is Yassine, I am 15 years old, I create Discord bots and Minecraft plugins.</p>";
+            document.querySelector(".language-switch").innerText = "عربي";
+        } else {
+            location.reload(); // إعادة تحميل الصفحة للعودة للعربي
+        }
+    }
+</script>
+
+</body>
+</html>
